@@ -14,6 +14,6 @@ jobs:
         server: 54.180.79.66
         username: root
         password: ${{ secrets.password }}
-        port: 56889
+        port: 54198
         server-dir: /usr/local/lsws/wordpress/wp-content/plugins/simply-static/static-files/
         protocol: ftps
