@@ -1,16 +1,19 @@
 on: push
 name: 🚀 Deploy website on push
 jobs:
-web-deploy:
-name: 🎉 Deploy
-runs-on: ubuntu-latest
-steps:
-- name: 🚚 Get latest code
-uses: actions/checkout@v2
-- name: 📂 Sync files
-uses: SamKirkland/FTP-Deploy-Action@4.0.0
-with:
-server: 54.180.79.66
-username: root
-password: ${{ secrets.ftp_password }}
-server-dir: /usr/local/lsws/wordpress
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v2
+    
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.2.0
+      with:
+        server: 54.180.79.66
+        username: root
+        password: ${{ secrets.password }}
+        port: 56889
+        server-dir: /usr/local/lsws/wordpress/wp-content/plugins/simply-static/static-files/
+        protocol: ftps
