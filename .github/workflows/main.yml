@@ -9,11 +9,11 @@ jobs:
       uses: actions/checkout@v2
     
     - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@3.1.1
+      uses: SamKirkland/FTP-Deploy-Action@2.0.0
       with:
-        server: 54.180.79.66
-        username: root@54.180.79.66
-        password: ${{ secrets.password }}
-        port: 54198
-        server-dir: /usr/local/lsws/wordpress/wp-content/plugins/simply-static/static-files/
-        protocol: ftps
+        FTP_SERVER: 54.180.79.66
+        FTP_USERNAME: root@54.180.79.66
+        FTP_PASSWORD: ${{ secrets.password }}
+        PORT: 54198
+        REMOTE_DIR: /usr/local/lsws/wordpress/wp-content/plugins/simply-static/static-files/
+        METHOD: sftp
